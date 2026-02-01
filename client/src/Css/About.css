@@ -1,6 +1,19 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --gold: #c5a059;
+  --gold-dark: #9e7c3a;
+
+  --bg-main: #faf9f6;
+
+  --text-main: #333333;
+  --text-muted: #6b6b6b;
+  --text-light: #8a8a8a;
+}
+
+/* ================= PAGE ================= */
 .about-page {
-  background: radial-gradient(circle at top, #14141b, #07070b);
-  color: #fff;
+  background: var(--bg-main);
+  color: var(--text-main);
   padding-bottom: 120px;
 }
 
@@ -13,19 +26,21 @@
 .about-hero h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.8rem, 5vw, 4.2rem);
+  color: var(--text-main);
 }
 
 .about-hero span {
-  color: #c5a059;
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(197, 160, 89, 0.35);
 }
 
 .about-hero p {
-  color: #b5b5b5;
+  color: var(--text-muted);
   margin-top: 20px;
   font-size: 1.2rem;
 }
 
-/* ================= SECTION ================= */
+/* ================= INTRO SECTION ================= */
 .about-section {
   padding: 100px 10%;
 }
@@ -37,8 +52,8 @@
 }
 
 .about-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(224, 215, 198, 0.9);
   padding: 40px;
   border-radius: 28px;
   backdrop-filter: blur(14px);
@@ -47,16 +62,17 @@
 
 .about-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(197,160,89,0.25);
+  box-shadow: 0 25px 50px rgba(197, 160, 89, 0.25);
 }
 
 .about-card h3 {
-  color: #c5a059;
+  color: var(--gold);
   margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
 .about-card p {
-  color: #b5b5b5;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -70,30 +86,37 @@
   font-family: "Playfair Display", serif;
   font-size: 2.8rem;
   margin-bottom: 60px;
+  color: var(--text-main);
 }
 
 .about-services span {
-  color: #c5a059;
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(197, 160, 89, 0.35);
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  /* gap: 30px; */
 }
 
 .service-box {
   padding: 26px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #1b1b22, #0d0d12);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(135deg, #faf9f6, #f4ebd0);
+  border: 1px solid rgba(224, 215, 198, 0.9);
   font-weight: 600;
+  color: var(--text-main);
   transition: 0.3s;
+}
+
+.service-box:hover {
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.25);
 }
 
 /* ================= CONTACT ================= */
 .about-contact {
-  padding: 110px 10%;
+  /* padding: 110px 10%; */
   text-align: center;
 }
 
@@ -101,32 +124,35 @@
   font-family: "Playfair Display", serif;
   font-size: 2.6rem;
   margin-bottom: 40px;
+  color: var(--text-main);
 }
 
 .about-contact span {
-  color: #c5a059;
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(197, 160, 89, 0.35);
 }
 
 .contact-box {
   max-width: 520px;
   margin: auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  /* padding: 40px; */
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(224, 215, 198, 0.9);
   border-radius: 28px;
+  backdrop-filter: blur(14px);
 }
 
 .contact-box p {
   margin-bottom: 14px;
-  color: #b5b5b5;
+  color: var(--text-muted);
 }
 
 .contact-highlight {
-  margin-top: 25px;
+  /* margin-top: 25px; */
   padding: 14px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #c5a059, #9e7c3a);
-  color: #000;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #1a1a1a;
   font-weight: 600;
 }
 

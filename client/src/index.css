@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= GOLD BACKGROUND ================= */
+body {
+  @apply font-poppins text-textMain overflow-x-hidden;
+  background: linear-gradient(
+    135deg,
+    #FAF9F6 0%,
+    #F4EBD0 40%,
+    #C5A059 100%
+  );
+}
+
+/* ================= GLASSMORPHISM ================= */
+.glass {
+  @apply bg-white/40 backdrop-blur-glass border border-borderSoft rounded-3xl shadow-glass;
+}
