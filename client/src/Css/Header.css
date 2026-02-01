@@ -1,0 +1,90 @@
+/* ================= HEADER ================= */
+.navbar {
+  top: 0;
+  width: 100%;
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  background: rgba(10, 10, 14, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 999;
+  position: relative; /* REQUIRED for centering nav */
+}
+
+/* ================= LEFT LOGO ================= */
+.logo-left {
+  display: flex;
+  align-items: center;
+}
+
+/* IMAGE LOGO */
+.logo-img-left {
+  height: 200px; /* 🔥 FIXED: 180px was too big */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.35));
+  transition: 0.3s ease;
+}
+
+.logo-img-left:hover {
+  transform: scale(1.06);
+}
+
+/* ================= CENTER NAV ================= */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+
+  /* 🔥 CENTER MAGIC */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* underline animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #c5a059;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #c5a059;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    display: none; /* hamburger later */
+  }
+
+  .logo-img-left {
+    height: 36px;
+  }
+}

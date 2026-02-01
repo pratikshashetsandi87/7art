@@ -1,0 +1,143 @@
+.graphic {
+  background: radial-gradient(circle at top, #14141b, #07070b);
+  color: #fff;
+}
+
+/* ================= HERO ================= */
+.graphic-hero {
+  text-align: center;
+}
+
+.graphic-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  /* margin-bottom: 14px; */
+}
+
+.graphic-hero span {
+  color: var(--gold);
+}
+
+.graphic-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ================= SERVICES ================= */
+.graphic-services {
+  padding: 110px 9% 120px;
+  text-align: center;
+}
+
+.graphic-services h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
+  /* margin-bottom: 70px; */
+}
+
+.graphic-services span {
+  color: var(--gold);
+}
+
+.graphic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards = clean layout */
+  gap: 32px;
+}
+
+.graphic-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 44px 36px;
+  border-radius: 26px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-height: 240px;
+}
+
+.graphic-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(197,160,89,0.25);
+}
+
+.graphic-card h3 {
+  color: var(--gold);
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+.graphic-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ================= PROCESS ================= */
+.graphic-process {
+  padding: 110px 10%;
+  text-align: center;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 34px;
+  margin-top: 60px;
+}
+
+/* ================= TEAM ================= */
+.graphic-team {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.graphic-team h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+}
+
+.graphic-team span {
+  color: var(--gold);
+}
+
+/* ================= CTA ================= */
+.graphic-cta {
+  padding: 120px 10%;
+  text-align: center;
+  background: linear-gradient(to bottom, #07070b, #0e0e14);
+}
+
+.graphic-cta span {
+  color: var(--gold);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .graphic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .graphic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .graphic-hero,
+  .graphic-services,
+  .graphic-process,
+  .graphic-team,
+  .graphic-cta {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .graphic-grid {
+    grid-template-columns: 1fr;
+  }
+}

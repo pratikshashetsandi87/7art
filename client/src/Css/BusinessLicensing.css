@@ -1,0 +1,104 @@
+.license {
+  background: radial-gradient(circle at top, #14141b, #07070b);
+  color: #fff;
+}
+
+/* HERO */
+.license-hero {
+  /* padding: 100px 10% 80px; */
+  text-align: center;
+}
+
+.license-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+.license-hero span {
+  color: var(--gold);
+}
+
+.license-hero p {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* SERVICES */
+.license-services {
+  padding: 110px 9% 120px;
+  text-align: center;
+}
+
+.license-services h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
+  /* margin-bottom: 70px; */
+}
+
+.license-services span {
+  color: var(--gold);
+}
+
+.license-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.license-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 44px 36px;
+  border-radius: 26px;
+  min-height: 240px;
+  transition: 0.4s;
+}
+
+.license-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(197,160,89,0.25);
+}
+
+.license-card h3 {
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.license-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* PROCESS */
+.license-process {
+  padding: 110px 10%;
+  text-align: center;
+}
+
+/* TEAM */
+.license-team {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .license-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .license-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .license-hero,
+  .license-services,
+  .license-process,
+  .license-team {
+    padding: 80px 6%;
+  }
+}

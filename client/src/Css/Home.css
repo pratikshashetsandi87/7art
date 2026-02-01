@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+/* ================= ROOT ================= */
+:root {
+  --bg-main: #0a0a0e;
+  --bg-soft: #121218;
+  --glass: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --gold: #c5a059;
+  --gold-dark: #9e7c3a;
+  --text-main: #ffffff;
+  --text-muted: #b5b5b5;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #14141b, #07070b);
+  color: var(--text-main);
+  font-family: "Poppins", sans-serif;
+}
+
+.home {
+  /* padding-top: 80px; */
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 70px;
+  padding: 90px 8%;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 22px;
+  border-radius: 50px;
+  background: rgba(197, 160, 89, 0.15);
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin: 30px 0;
+}
+
+.hero-title span {
+  color: var(--gold);
+  text-shadow: 0 0 25px rgba(197, 160, 89, 0.4);
+}
+
+.hero-text {
+  max-width: 520px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 45px;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary,
+.btn-secondary {
+  padding: 15px 38px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #000;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.35);
+}
+
+/* ================= HERO IMAGE ================= */
+.hero-img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 30px 30px 0 var(--gold);
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= SERVICES ================= */
+.services {
+  padding: 110px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 70px;
+}
+
+.section-title span {
+  color: var(--gold);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+/* REMOVE LINK COLOR FROM SERVICE CARDS */
+.service-link {
+  text-decoration: none;
+  color: inherit;   /* 👈 keeps text white */
+  display: block;
+}
+
+/* Ensure text inside card stays white */
+.service-link h3,
+.service-link p {
+  color: var(--text-main);
+}
+
+
+.service-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 45px 20px;
+  border-radius: 28px;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: 0.4s;
+}
+
+.service-card:hover {
+  transform: perspective(900px) rotateX(-8deg) rotateY(10deg) scale(1.05);
+  box-shadow: 0 30px 60px rgba(197, 160, 89, 0.25);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+}
+
+/* ================= GROWTH ================= */
+.growth {
+  padding: 110px 10%;
+}
+
+.growth-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.growth-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.7rem;
+}
+
+.growth-text span {
+  color: var(--gold);
+}
+
+.growth-text ul {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.growth-text li {
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.growth-text i {
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+.growth-img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+/* ================= CORE TEAM ================= */
+.team {
+  padding: 110px 10%;
+  background: linear-gradient(to bottom, #07070b, #0e0e14);
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.team-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 45px 30px;
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+  transition: 0.4s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover {
+  transform: perspective(900px) translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(197, 160, 89, 0.25);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  margin-bottom: 22px;
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.team-card span {
+  display: block;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.team-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial {
+  padding: 120px 10%;
+  background: linear-gradient(to bottom, #07070b, #0e0e14);
+  text-align: center;
+}
+
+.testimonial-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 45px;
+  border-radius: 28px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+}
+
+.testimonial-card img {
+  width: 75px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.testimonial-card p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+/* ================= FIX UNWANTED SCROLL ================= */
+
+/* Kill horizontal overflow globally */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure main wrappers never overflow */
+.home,
+.hero,
+.services,
+.growth,
+.team,
+.testimonial {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix glow / transform overflow on cards */
+.service-card,
+.team-card,
+.testimonial-card {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Prevent pseudo-element glow from pushing layout */
+.service-card::after {
+  pointer-events: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero,
+  .growth-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-img {
+    box-shadow: none;
+  }
+
+  .team {
+    padding: 90px 6%;
+  }
+
+
+  
+}

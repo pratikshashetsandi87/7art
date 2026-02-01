@@ -1,0 +1,146 @@
+.services-page {
+  background: radial-gradient(circle at top, #14141b, #07070b);
+  color: #fff;
+  /* padding-top: 100px; */
+}
+
+/* ================= HERO ================= */
+.services-hero {
+  /* padding: 80px 10% 60px; */
+  text-align: center;
+}
+
+.services-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+}
+
+.services-hero span {
+  color: var(--gold);
+}
+
+.services-hero p {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ================= SERVICES GRID ================= */
+.services-section {
+  padding: 110px 10%;
+}
+
+.services-grid {
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  gap: 20px;
+}
+
+/* ================= SERVICE CARD ================= */
+.service-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  /* padding: 55px 40px; */
+  border-radius: 30px;
+  backdrop-filter: blur(14px);
+  transition: 0.45s;
+  transform-style: preserve-3d;
+}
+/* REMOVE LINK COLOR FROM SERVICE CARDS */
+.service-link {
+  text-decoration: none;
+  color: inherit;   /* 👈 keeps text white */
+  display: block;
+}
+
+/* Ensure text inside card stays white */
+.service-link h3,
+.service-link p {
+  color: var(--text-main);
+}
+
+
+.service-card:hover {
+  transform: perspective(900px) translateY(-14px) scale(1.05);
+  box-shadow: 0 35px 70px rgba(197,160,89,0.25);
+}
+
+.service-card h3 {
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.service-desc {
+  margin: 14px 0 22px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* LIST */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 22px;
+}
+
+.service-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ICON */
+.icon-box {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 2rem;
+  box-shadow: 0 0 25px rgba(197,160,89,0.4);
+}
+
+/* ================= CTA ================= */
+.services-cta {
+  padding: 120px 10%;
+  text-align: center;
+  background: linear-gradient(to bottom, #07070b, #0e0e14);
+}
+
+.services-cta h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.services-cta span {
+  color: var(--gold);
+}
+
+.services-cta p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .services-hero,
+  .services-section,
+  .services-cta {
+    padding: 80px 6%;
+  }
+}
