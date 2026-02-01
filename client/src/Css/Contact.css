@@ -1,12 +1,30 @@
+/* ================= ROOT SUPPORT ================= */
+:root {
+  --bg-main: #faf9f6;
+  --bg-soft: #f4ebd0;
+
+  --gold: #c5a059;
+  --gold-dark: #9e7c3a;
+
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
+
+  --glass: rgba(255, 255, 255, 0.65);
+  --border: rgba(224, 215, 198, 0.9);
+
+  --shadow-soft: 0 15px 35px rgba(0,0,0,0.08);
+  --shadow-gold: 0 25px 55px rgba(197,160,89,0.28);
+}
+
 /* ================= PAGE ================= */
 .contact-page {
-  /* min-height: 100vh; */
-  background: radial-gradient(circle at top, #14141b, #07070b);
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-soft));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 90px 6%;
-  color: #fff;
+  padding: 100px 6%;
+  color: var(--text-main);
 }
 
 /* ================= CARD ================= */
@@ -19,7 +37,8 @@
   padding: 55px 45px;
   text-align: center;
   backdrop-filter: blur(18px);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-soft);
+  animation: fadeUp 0.8s ease forwards;
 }
 
 /* ================= HEADINGS ================= */
@@ -27,10 +46,12 @@
   font-family: "Playfair Display", serif;
   font-size: 2.3rem;
   margin-bottom: 10px;
+  color: var(--text-main);
 }
 
 .contact-box h2 span {
   color: var(--gold);
+  text-shadow: 0 0 18px rgba(197,160,89,0.35);
 }
 
 .contact-box p {
@@ -57,13 +78,14 @@
   justify-content: center;
   font-size: 0.9rem;
   color: var(--text-muted);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .progress span.active {
   background: var(--gold);
-  color: #000;
+  color: #ffffff;
   border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
 }
 
 /* ================= FORM ================= */
@@ -74,20 +96,26 @@
 /* INPUT GROUP */
 .input-group {
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 14px 14px;
+  padding: 14px;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 12px;
   outline: none;
-  color: #fff;
+  color: var(--text-main);
   font-size: 0.95rem;
   resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--gold);
 }
 
 /* FLOATING LABEL */
@@ -110,7 +138,7 @@
 .input-group textarea:not(:placeholder-shown) + label {
   top: -8px;
   font-size: 0.75rem;
-  background: #07070b;
+  background: var(--bg-main);
   padding: 0 6px;
   color: var(--gold);
 }
@@ -124,14 +152,14 @@
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--gold), #a68543);
-  color: #000;
-  transition: 0.3s ease;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #ffffff;
+  transition: all 0.35s ease;
 }
 
 .send-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(197, 160, 89, 0.35);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
 }
 
 /* BACK + SEND ROW */
@@ -146,9 +174,9 @@
   border-radius: 14px;
   background: transparent;
   border: 1px solid var(--border);
-  color: #fff;
+  color: var(--text-main);
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-back:hover {
@@ -160,7 +188,55 @@
 .send-btn.whatsapp {
   flex: 2;
   background: linear-gradient(135deg, #25d366, #1ebe5d);
-  color: #000;
+  color: #ffffff;
+}
+
+/* ================= FLOATING WHATSAPP ================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 
 /* ================= RESPONSIVE ================= */
