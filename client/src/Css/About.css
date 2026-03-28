@@ -19,7 +19,7 @@
 
 /* ================= HERO ================= */
 .about-hero {
-  padding: 140px 10% 90px;
+  /* padding: 140px 10% 90px; */
   text-align: center;
 }
 
@@ -96,23 +96,58 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  /* gap: 30px; */
+  grid-template-columns: repeat(2, 2fr); /* 🔥 Forces 3 cards per row */
+  gap: 45px; /* Premium spacing */
+  margin-top: 60px;
 }
 
+
+
 .service-box {
-  padding: 26px;
-  border-radius: 18px;
+  padding: 38px 30px;
+  border-radius: 22px;
   background: linear-gradient(135deg, #faf9f6, #f4ebd0);
   border: 1px solid rgba(224, 215, 198, 0.9);
-  font-weight: 600;
-  color: var(--text-main);
-  transition: 0.3s;
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 
 .service-box:hover {
-  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.25);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 65px rgba(197, 160, 89, 0.28);
 }
+
+.service-icon {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.service-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.service-box p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+
+.service-box:hover{
+  transform:translateY(-12px);
+  box-shadow:0 30px 65px rgba(197,160,89,.28);
+}
+
 
 /* ================= CONTACT ================= */
 .about-contact {
@@ -165,3 +200,17 @@
     padding: 90px 6%;
   }
 }
+/* Laptop */
+@media (max-width:1100px){
+  .services-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width:600px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+

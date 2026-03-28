@@ -27,6 +27,7 @@ const Home = () => {
 
         {/* ================= HERO ================= */}
         <section className="hero">
+
           <motion.div
             className="hero-left"
             variants={stagger}
@@ -66,10 +67,12 @@ const Home = () => {
               className="hero-img floating"
             />
           </motion.div>
+
         </section>
 
         {/* ================= SERVICES ================= */}
         <section className="services">
+
           <motion.h2
             className="section-title"
             initial={{ opacity: 0 }}
@@ -86,19 +89,17 @@ const Home = () => {
             whileInView="show"
             viewport={{ once: true }}
           >
-            {/* Graphic Design */}
-           <Link to="/services/graphic-design" className="service-link">
-          <motion.div className="service-card" variants={fadeUp}>
-         <div className="icon-box">
-      <i className="fas fa-palette"></i>
-    </div>
-    <h3>Graphic Design</h3>
-    <p>Branding, logos & marketing visuals</p>
-  </motion.div>
-</Link>
 
+            <Link to="/services/graphic-design" className="service-link">
+              <motion.div className="service-card" variants={fadeUp}>
+                <div className="icon-box">
+                  <i className="fas fa-palette"></i>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>Branding, logos & marketing visuals</p>
+              </motion.div>
+            </Link>
 
-            {/* Web Development (CLICKABLE) */}
             <Link to="/services/web-development" className="service-link">
               <motion.div className="service-card" variants={fadeUp}>
                 <div className="icon-box">
@@ -109,49 +110,50 @@ const Home = () => {
               </motion.div>
             </Link>
 
-            {/* Content Writing */}
-             <Link to="/services/content-writing" className="service-link">
-            <motion.div className="service-card" variants={fadeUp}>
-              <div className="icon-box">
-                <i className="fas fa-pen-nib"></i>
-              </div>
-              <h3>Content Writing</h3>
-              <p>SEO blogs & high-converting copy</p>
-            </motion.div>
+            <Link to="/services/content-writing" className="service-link">
+              <motion.div className="service-card" variants={fadeUp}>
+                <div className="icon-box">
+                  <i className="fas fa-pen-nib"></i>
+                </div>
+                <h3>Content Writing</h3>
+                <p>SEO blogs & high-converting copy</p>
+              </motion.div>
             </Link>
 
-            {/* Business Licensing */}
-               <Link to="/services/business-licensing" className="service-link">
-            <motion.div className="service-card" variants={fadeUp}>
-              <div className="icon-box">
-                <i className="fas fa-shield-halved"></i>
-              </div>
-              <h3>Business Licensing</h3>
-              <p>Compliance & legal registrations</p>
-          
-            </motion.div>
-                </Link>
+            <Link to="/services/business-licensing" className="service-link">
+              <motion.div className="service-card" variants={fadeUp}>
+                <div className="icon-box">
+                  <i className="fas fa-shield-halved"></i>
+                </div>
+                <h3>Business Licensing</h3>
+                <p>Compliance & legal registrations</p>
+              </motion.div>
+            </Link>
+
           </motion.div>
-          
         </section>
 
         {/* ================= GROWTH ================= */}
         <section className="growth">
+
           <motion.div
             className="growth-box"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+
             <div className="growth-text">
               <h2>
                 Websites Built <span>For Growth</span>
               </h2>
+
               <ul>
                 <li><i className="fas fa-check"></i> Mobile-First Design</li>
                 <li><i className="fas fa-check"></i> High Performance</li>
                 <li><i className="fas fa-check"></i> Conversion Optimized</li>
               </ul>
+
               <button className="btn-secondary">
                 Get Started <i className="fas fa-rocket"></i>
               </button>
@@ -162,11 +164,13 @@ const Home = () => {
               alt="Business Growth"
               className="growth-img floating"
             />
+
           </motion.div>
         </section>
 
         {/* ================= CORE TEAM ================= */}
         <section className="team">
+
           <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 40 }}
@@ -183,61 +187,49 @@ const Home = () => {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <motion.div className="team-card" variants={fadeUp}>
-              <img src="https://i.pravatar.cc/300?img=12" alt="Narendra Yadav" />
-              <h3>Narendra Yadav</h3>
-              <span>Founder</span>
-              <p>
-                Founder of The 7 Art Narration with 8+ years of experience in
-                branding, design & marketing strategy.
-              </p>
-            </motion.div>
 
+            {[
+              {
+                name: "Narendra Yadav",
+                role: "Founder",
+                img: "https://i.pravatar.cc/300?img=12",
+                text: "Founder with 8+ years of experience in branding & marketing."
+              },
+              {
+                name: "Saurabh Kandhare",
+                role: "Co-Founder",
+                img: "https://i.pravatar.cc/300?img=47",
+                text: "Ensures seamless execution of creative projects."
+              },
+              {
+                name: "Chaitali Vairate",
+                role: "Co-Founder",
+                img: "https://i.pravatar.cc/300?img=32",
+                text: "SEO strategist with strong storytelling expertise."
+              },
+              // {
+              //   name: "Akansha Atole",
+              //   role: "Web Designer",
+              //   img: "https://i.pravatar.cc/300?img=5",
+              //   text: "Crafts stunning, user-focused digital experiences."
+              // }
+            ].map((member, i) => (
+              <motion.div key={i} className="team-card" variants={fadeUp}>
+                <img src={member.img} alt={member.name} />
+                <h3>{member.name}</h3>
+                <span>{member.role}</span>
+                <p>{member.text}</p>
 
-<motion.div className="team-card" variants={fadeUp}>
-  <img
-    src="https://i.pravatar.cc/300?img=12"
-    alt="Saurabh Kandhare"
-  />
-  <h3>Saurabh Kandhare</h3>
-  <span>Co-Founder</span>
-  <p>
-    Handles business operations and ensures seamless execution of
-    creative projects.
-  </p>
-</motion.div>
+                <div className="team-social">
+                  <i className="fab fa-linkedin"></i>
+                  <i className="fas fa-envelope"></i>
+                  <i className="fab fa-instagram"></i>
+                </div>
+              </motion.div>
+            ))}
 
-
-
-
-            <motion.div className="team-card" variants={fadeUp}>
-              <img src="https://i.pravatar.cc/300?img=47" alt="Chaitali Vairate" />
-              <h3>Chaitali Vairate</h3>
-              <span>Co-Founder</span>
-              <p>
-                SEO & content strategist with 5+ years of experience in digital
-                marketing and storytelling.
-              </p>
-            </motion.div>
           </motion.div>
         </section>
-
-        {/* ================= TESTIMONIAL ================= */}
-        {/* <section className="testimonial">
-          <motion.div
-            className="testimonial-card"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <img src="https://i.pravatar.cc/100" alt="client" />
-            <p>
-              “The 7 Art Narration transformed our online presence.
-              Stunning design & flawless execution.”
-            </p>
-            <h4>— Sara M, Marketing Director</h4>
-          </motion.div>
-        </section> */}
 
       </div>
     </Layout>

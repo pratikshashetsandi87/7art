@@ -43,11 +43,11 @@
 
 /* ================= SERVICE CARD ================= */
 .service-card {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  /* padding: 55px 40px; */
-  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  padding: 60px 30px;
+  border-radius: 30px;
   transition: 0.45s;
   transform-style: preserve-3d;
 }
@@ -67,7 +67,11 @@
 
 .service-card:hover {
   transform: perspective(900px) translateY(-14px) scale(1.05);
-  box-shadow: 0 35px 70px rgba(197,160,89,0.25);
+  box-shadow: 0 35px 70px rgba(212,175,55,0.3);
+}
+
+.service-card:hover .icon-box {
+  animation: iconFloat 1.5s ease-in-out infinite;
 }
 
 .service-card h3 {
@@ -105,8 +109,8 @@
 
 /* ICON */
 .icon-box {
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   margin: auto;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -114,8 +118,9 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 2rem;
-  box-shadow: 0 0 25px rgba(197,160,89,0.4);
+  font-size: 2.2rem;
+  box-shadow: 0 10px 30px rgba(212,175,55,0.4);
+  margin-bottom: 30px;
 }
 
 /* ================= CTA ================= */
@@ -139,6 +144,17 @@
   color: var(--text-muted);
   margin-bottom: 40px;
   font-size: 1.1rem;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 20px rgba(212,175,55,0.6); }
+  100% { text-shadow: 0 0 30px rgba(212,175,55,0.8), 0 0 40px rgba(212,175,55,0.4); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
 /* ================= RESPONSIVE ================= */
