@@ -75,39 +75,65 @@ function About() {
 
         {/* ================= SERVICES ================= */}
         <section className="about-services">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            Our <span>Services</span>
-          </motion.h2>
+  <motion.h2
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+  >
+    Our <span>Services</span>
+  </motion.h2>
 
-          <div className="services-grid">
-            {[
-              "Brand Identity & Logo Design",
-              "Graphic & Visual Design",
-              "Website Design & Development",
-              "Social Media & Marketing Creatives",
-              "Content Writing & Copywriting",
-              "Business Licensing & Consulting"
-            ].map((service, i) => (
-              <motion.div
-                className="service-box"
-                key={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                custom={i}
-                whileHover={{ scale: 1.05 }}
-              >
-                {service}
-              </motion.div>
-            ))}
-          </div>
-        </section>
+  <div className="services-grid">
+    {[
+      {
+        title: "Brand Identity",
+        desc: "Logo design, brand strategy & visual identity",
+        icon: "fas fa-pen-nib",
+      },
+      {
+        title: "Graphic Design",
+        desc: "Creative visuals, banners & marketing graphics",
+        icon: "fas fa-palette",
+      },
+      {
+        title: "Web Development",
+        desc: "Modern, fast & SEO-friendly websites",
+        icon: "fas fa-laptop-code",
+      },
+      {
+        title: "Social Media",
+        desc: "Marketing creatives & growth strategies",
+        icon: "fas fa-bullhorn",
+      },
+      {
+        title: "Content Writing",
+        desc: "SEO blogs & high-converting copywriting",
+        icon: "fas fa-file-alt",
+      },
+      // {
+      //   title: "Business Consulting",
+      //   desc: "Licensing, compliance & startup consulting",
+      //   icon: "fas fa-briefcase",
+      // },
+    ].map((service, i) => (
+      <motion.div
+        className="service-box"
+        key={i}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        whileHover={{ y: -10 }}
+      >
+        <i className={`${service.icon} service-icon`}></i>
+        <h3>{service.title}</h3>
+        <p>{service.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
         {/* ================= CONTACT INFO ================= */}
         <section className="about-contact">

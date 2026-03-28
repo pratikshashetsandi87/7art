@@ -64,12 +64,12 @@ const WebDevelopment = () => {
       className="team-avatar"
     />
 
-    <h3>Akansha Atole</h3>
+    <h3>prstiksha shetsandi</h3>
     <span className="team-role">Web Designer</span>
 
     <p>
       <i className="fas fa-phone"></i>
-      +91 96578 25369
+      +91 8766961135
     </p>
 
     <p>
